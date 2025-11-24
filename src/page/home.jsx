@@ -1,7 +1,29 @@
 import React, { useState, useEffect, useRef } from "react";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import emailjs from '@emailjs/browser'
-import { AppBar, Toolbar, IconButton, Drawer, List, ListItem, ListItemText, Box, useMediaQuery, Typography, TextField } from "@mui/material";
-import Grid from '@mui/material/Grid';
+import Jaringan from '../image/network.png'
+import Server from '../image/server.png'
+import Cctv from '../image/cctv.png'
+import Fingerprint from '../image/fingerprint.png'
+import Proyektor from '../image/proyektor.png'
+import Monitoring from '../image/monitoring.png'
+import { 
+    AppBar, 
+    Toolbar, 
+    IconButton, 
+    Drawer, 
+    List, 
+    ListItem, 
+    ListItemText, 
+    Box, 
+    useMediaQuery, 
+    TextField, 
+    Container,
+    Grid,
+    Card,
+    CardContent,
+    Typography, 
+} from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from "react-router-dom";
 import Eng from '../image/eng.png';
@@ -47,7 +69,7 @@ import icon12 from '../image/12.png'
 import icon13 from '../image/13.png'
 import icon14 from '../image/14.png'
 import icon15 from '../image/15.png'
-import icon16 from '../image/16.png'
+import icon16 from '../image/icon16.png'
 import { Button } from "@mui/material";
 
 const menuItems = [
@@ -433,7 +455,7 @@ export function Home({ setLocale }) {
             <Box
                 sx={{
                     width: !isMobile ? "60%" : "auto",
-                    height: !isMobile ? "100%" : '80%',
+                    height: !isMobile ? "93.3%" : '80%',
                     backgroundColor: !isMobile ? "white" : 0,
                     display: "flex",
                     flexDirection: "column",
@@ -441,7 +463,6 @@ export function Home({ setLocale }) {
                     justifyContent: "center",
                     position: "relative",
                     padding: 4,
-                    borderRadius: 4,
                     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
                 }}
                 >
@@ -674,8 +695,6 @@ export function Home({ setLocale }) {
                 </Box>
 
 
-
-
                 {/* Image Box on the right */}
                 <Box
                     sx={{
@@ -869,6 +888,221 @@ export function Home({ setLocale }) {
          </Box>
        </Box>
       </Box>
+
+<Container
+  sx={{
+    py: 6,
+    mt: { xs: 50, md: 0 },   // mobile turun, desktop normal
+  }}
+>
+      <Grid 
+        container 
+        rowSpacing={6}
+        columnSpacing={4}
+      >
+
+        {/* ===================== CARD 1 ===================== */}
+        <Grid item xs={12} md={6}>
+          <Card sx={{ p: 2 }}>
+            <CardContent>
+              
+              <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                <img src={Jaringan} alt="Jaringan" style={{ width: 40, marginRight: 10 }} />
+                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                  Instalasi LAN & Wifi Akses Point
+                </Typography>
+              </Box>
+
+              <Typography sx={{ mb: 2 }}>
+                Instalasi Jaringan PC dan Wifi Akses Point untuk perusahaan,
+                perumahan dan lainnya.
+              </Typography>
+
+              {[
+                "Konsultasi Penggunaan Media yang Cocok",
+                "Pengukuran Area yang akan di Instalasi",
+                "Instalasi & Konfigurasi Kabel LAN",
+                "Instalasi & Konfigurasi Wifi Akses Point",
+              ].map((item, idx) => (
+                <Box key={idx} sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                  <CheckCircleOutlineIcon sx={{ color: "#42A5F5", mr: 1 }} />
+                  <Typography>{item}</Typography>
+                </Box>
+              ))}
+
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* ===================== CARD 2 ===================== */}
+        <Grid item xs={12} md={6}>
+          <Card sx={{ p: 2 }}>
+            <CardContent>
+
+              <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                <img src={Server} alt="Server" style={{ width: 40, marginRight: 10 }} />
+                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                  Instalasi & Konfigurasi Server
+                </Typography>
+              </Box>
+
+              <Typography sx={{ mb: 2 }}>
+                Instalasi dan konfigurasi Sistem Operasi PC maupun Server.
+              </Typography>
+
+              {[
+                "Instalasi Sistem Operasi Windows/Linux",
+                "Instalasi & Konfigurasi Windows/Linux Server",
+                "Instalasi & Konfigurasi Sharing Printer",
+                "Troubleshooting PC & Server",
+              ].map((item, idx) => (
+                <Box key={idx} sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                  <CheckCircleOutlineIcon sx={{ color: "#42A5F5", mr: 1 }} />
+                  <Typography>{item}</Typography>
+                </Box>
+              ))}
+
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* ===================== CARD 3 ===================== */}
+        <Grid item xs={12} md={6}>
+          <Card sx={{ p: 2 }}>
+            <CardContent>
+
+              <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                <img src={Cctv} alt="CCTV" style={{ width: 40, marginRight: 10 }} />
+                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                  Instalasi CCTV & IP Cam
+                </Typography>
+              </Box>
+
+              <Typography sx={{ mb: 2 }}>
+                Instalasi dan konfigurasi CCTV Analog maupun IP Cam, DVR dan Media
+                Penyimpanannya.
+              </Typography>
+
+              {[
+                "Konsultasi Penggunaan Media yang Cocok",
+                "Pengukuran Area yang akan di Instalasi",
+                "Instalasi & Konfigurasi Kabel LAN/Coaxial",
+                "Instalasi & Konfigurasi CCTV, IP Cam & DVR/NVR",
+              ].map((item, idx) => (
+                <Box key={idx} sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                  <CheckCircleOutlineIcon sx={{ color: "#42A5F5", mr: 1 }} />
+                  <Typography>{item}</Typography>
+                </Box>
+              ))}
+
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* ===================== CARD 4 ===================== */}
+        <Grid item xs={12} md={6}>
+          <Card sx={{ p: 2 }}>
+            <CardContent>
+              
+              <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                <img src={Fingerprint} alt="Fingerprint" style={{ width: 40, marginRight: 10 }} />
+                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                  Instalasi Akses & Fingerprint
+                </Typography>
+              </Box>
+
+              <Typography sx={{ mb: 2 }}>
+                Instalasi dan Konfigurasi Mesin Absensi, Pintu Akses untuk menjaga
+                keamanan kantor.
+              </Typography>
+
+              {[
+                "Analisa Kebutuhan yang Cocok",
+                "Instalasi & Konfigurasi Mesin Absensi",
+                "Instalasi & Konfigurasi Akses Door",
+                "Training dan Pendaftaran Akses Karyawan",
+              ].map((item, idx) => (
+                <Box key={idx} sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                  <CheckCircleOutlineIcon sx={{ color: "#42A5F5", mr: 1 }} />
+                  <Typography>{item}</Typography>
+                </Box>
+              ))}
+
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* ===================== CARD 5 ===================== */}
+        <Grid item xs={12} md={6}>
+          <Card sx={{ p: 2 }}>
+            <CardContent>
+
+              <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                <img src={Proyektor} alt="Proyektor" style={{ width: 40, marginRight: 10 }} />
+                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                  Instalasi Proyektor dan Layar
+                </Typography>
+              </Box>
+
+              <Typography sx={{ mb: 2 }}>
+                Instalasi dan konfigurasi Proyektor gantung dan Layar manual maupun otomatis.
+              </Typography>
+
+              {[
+                "Konsultasi Penggunaan Media yang Cocok",
+                "Pengukuran Area yang akan di Instalasi",
+                "Instalasi & Konfigurasi Proyektor & Braket",
+                "Instalasi & Layar Proyektor",
+              ].map((item, idx) => (
+                <Box key={idx} sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                  <CheckCircleOutlineIcon sx={{ color: "#42A5F5", mr: 1 }} />
+                  <Typography>{item}</Typography>
+                </Box>
+              ))}
+
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* ===================== CARD 6 ===================== */}
+        <Grid item xs={12} md={6}>
+          <Card sx={{ p: 2 }}>
+            <CardContent>
+
+              <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                <img src={Monitoring} alt="Monitoring" style={{ width: 40, marginRight: 10 }} />
+                <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                  L1 Support Jakarta: Jaga Sistem Anda Tetap Stabil
+                </Typography>
+              </Box>
+
+              <Typography sx={{ mb: 2 }}>
+                Monitoring 24/7 terhadap server & jaringan.
+              </Typography>
+
+              {[
+                "Dukungan Teknis Dasar untuk sistem Linux.",
+                "Penanganan Tiket Pertama (Ticket Logging & Initial Triage).",
+                "Diagnosis Awal dan eskalasi yang tepat sasaran.",
+                "Eksekusi Perintah & Maintenance rutin berdasarkan SOP.",
+                "Bantuan Helpdesk untuk masalah end-user.",
+                "Pelaporan Kinerja sistem secara berkala.",
+              ].map((item, idx) => (
+                <Box key={idx} sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                  <CheckCircleOutlineIcon sx={{ color: "#42A5F5", mr: 1 }} />
+                  <Typography>{item}</Typography>
+                </Box>
+              ))}
+
+            </CardContent>
+          </Card>
+        </Grid>
+
+      </Grid>
+    </Container>
+
+
+           
          
 
      {!isMobile ? 
@@ -1156,6 +1390,7 @@ export function Home({ setLocale }) {
 </Box>
  : 0
 }
+
 
 <Box
   id="solution"
@@ -1720,314 +1955,275 @@ export function Home({ setLocale }) {
 
     {/* Dua Box Putih di Samping */}
     <Box
+  sx={{
+    display: "flex",
+    flexDirection: isMobile ? "column" : "row",
+    gap: 2,
+  }}
+>
+  {/* ================= CARD 1 ================= */}
+  <Box
+    sx={{
+      width: { xs: "100%", sm: 240 },
+      height: 240,
+      backgroundColor: "white",
+      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+      borderRadius: 3,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
+      padding: 2,
+    }}
+  >
+    <img
+      src={icon10}
+      style={{ width: 40, height: 40, marginBottom: 10 }}
+      alt="icon"
+    />
+
+    <Typography
+      sx={{ fontSize: 18, fontWeight: "bold" }}
+      className="headline-blok-four"
+    >
+      Website
+    </Typography>
+
+    <Typography
+      sx={{ marginBottom: 2, textAlign: "center" }}
+      className="deskripsi-blok-four"
+    >
+      <FormattedMessage id="deskripsi-3" />
+    </Typography>
+
+    <Button
+      onClick={() => {
+        const section = document.getElementById("topik");
+        if (section) section.scrollIntoView({ behavior: "smooth" });
+      }}
       sx={{
         display: "flex",
-        flexDirection: !isMobile ? "row" : "column",
-        gap: 2,
+        flexDirection: "row",
+        alignItems: "center",
+        gap: 1,
+        marginTop: 2,
       }}
     >
-      <Box
-        sx={{
-            width: 290,
-            height: 290,
-            backgroundColor: "white",
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-            borderRadius: 10,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center", // Agar teks juga sejajar tengah
-            padding: 2,
-        }}
-        >
-        <img src={icon10} style={{ width: 50, height: 50, marginBottom: 10 }} alt="icon" />
+      <img src={icon8} style={{ width: 24, height: 24 }} alt="icon" />
+      <Typography sx={{ textTransform: "none" }}>
+        <FormattedMessage id="button-selengkapnya" />
+      </Typography>
+    </Button>
+  </Box>
 
-        <Typography className="headline-blok-four" sx={{ fontSize: 22, fontWeight: "bold" }}>
-            Website
-        </Typography>
+  {/* ================= CARD 2 ================= */}
+  <Box
+    sx={{
+      width: { xs: "100%", sm: 240 },
+      height: 240,
+      backgroundColor: "white",
+      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+      borderRadius: 3,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
+      padding: 2,
+    }}
+  >
+    <img
+      src={icon11}
+      style={{ width: 40, height: 40, marginBottom: 10 }}
+      alt="icon"
+    />
 
-        <Typography className="deskripsi-blok-four" sx={{ marginBottom: 2, textAlign: 'center' }}>
-         <FormattedMessage id="deskripsi-3" />
-        </Typography>
+    <Typography
+      sx={{ fontSize: 18, fontWeight: "bold" }}
+      className="headline-blok-four"
+    >
+      Dropbox
+    </Typography>
 
-        <Button
-            onClick={() => {
-                const section = document.getElementById("topik");
-                if (section) {
-                    section.scrollIntoView({ behavior: "smooth" });
-                }
-            }}
-            sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center", // Pastikan sejajar vertikal
-            gap: 1,
-            marginTop: 2, // Beri jarak dari teks di atasnya
-            }}
-        >
-            <img src={icon8} style={{ height: 30, width: 30 }} alt="icon" />
-            <Typography className="headline-blok-three-in" sx={{ textTransform: "none" }}>
-            <FormattedMessage id="button-selengkapnya" />
-            </Typography>
-        </Button>
-        </Box>
+    <Typography
+      sx={{ marginBottom: 2, textAlign: "center" }}
+      className="deskripsi-blok-four"
+    >
+      <FormattedMessage id="deskripsi-4" />
+    </Typography>
 
-      <Box
-        sx={{
-          width: 290,
-          height: 290,
-          backgroundColor: "white",
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-          borderRadius: 2,
-        }}
-      >
-        <Box
-        sx={{
-            width: 290,
-            height: 290,
-            backgroundColor: "white",
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-            borderRadius: 10,
-            borderTopLeftRadius: 10,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center", // Agar teks juga sejajar tengah
-            padding: 2,
-        }}
-        >
-        <img src={icon11} style={{ width: 50, height: 50, marginBottom: 10 }} alt="icon" />
+    <Button
+      onClick={() => {
+        const section = document.getElementById("topik");
+        if (section) section.scrollIntoView({ behavior: "smooth" });
+      }}
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        gap: 1,
+        marginTop: 2,
+      }}
+    >
+      <img src={icon8} style={{ width: 24, height: 24 }} alt="icon" />
+      <Typography sx={{ textTransform: "none" }}>
+        <FormattedMessage id="button-selengkapnya" />
+      </Typography>
+    </Button>
+  </Box>
+</Box>
 
-        <Typography className="headline-blok-four" sx={{ fontSize: 22, fontWeight: "bold" }}>
-        Dropbox
-        </Typography>
-
-        <Typography className="deskripsi-blok-four" sx={{ marginBottom: 2, textAlign: 'center' }}>
-        <FormattedMessage id="deskripsi-4" />
-        </Typography>
-
-        <Button
-            onClick={() => {
-                const section = document.getElementById("topik");
-                if (section) {
-                    section.scrollIntoView({ behavior: "smooth" });
-                }
-            }}
-            sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center", // Pastikan sejajar vertikal
-            gap: 1,
-            marginTop: 2, // Beri jarak dari teks di atasnya
-            }}
-        >
-            <img src={icon8} style={{ height: 30, width: 30 }} alt="icon" />
-            <Typography className="headline-blok-three-in" sx={{ textTransform: "none" }}>
-            <FormattedMessage id="button-selengkapnya" />
-            </Typography>
-        </Button>
-        </Box>
-      </Box>
-    </Box>
   </Box>
 
   {/* Bagian Bawah: 4 Box Putih dalam Baris */}
-  <Box
-    sx={{
-      display: "flex",
-      flexDirection: !isMobile ? "row" : "column",
-      gap: 2, // Jarak antar box putih,
-      position: isMobile ? 'relative' : 0,
-      top: 20
-    }}
-  >
-    <Box
+<Box sx={{ mt: 5 }}>
+  <Grid container spacing={4} justifyContent="center">
+
+    {/* ==== CARD 1 ==== */}
+    <Grid item xs={12} sm={6} md={3}>
+      <Box
         sx={{
-            width: 290,
-            height: 290,
-            backgroundColor: "white",
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-            borderRadius: 10,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center", // Agar teks juga sejajar tengah
-            padding: 2,
+          width: { xs: "100%", md: "90%" },
+          height: 240,
+          backgroundColor: "white",
+          boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
+          borderRadius: 3,
+          p: 2,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center"
         }}
-        >
-        <img src={icon12} style={{ width: 50, height: 50, marginBottom: 10 }} alt="icon" />
+      >
+        <img src={icon12} style={{ width: 40, height: 40, marginBottom: 10 }} />
 
-        <Typography className="headline-blok-four" sx={{ fontSize: 22, fontWeight: "bold" }}>
-        Live Chat
+        <Typography sx={{ fontSize: 18, fontWeight: "bold" }}>
+          Live Chat
         </Typography>
 
-        <Typography className="deskripsi-blok-four" sx={{ marginBottom: 2, textAlign: 'center' }}>
-        <FormattedMessage id="deskripsi-5" />
+        <Typography sx={{ mb: 2, fontSize: 14 }}>
+          <FormattedMessage id="deskripsi-5" />
         </Typography>
 
-        <Button
-            onClick={() => {
-                const section = document.getElementById("topik");
-                if (section) {
-                    section.scrollIntoView({ behavior: "smooth" });
-                }
-            }}
-            sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center", // Pastikan sejajar vertikal
-            gap: 1,
-            marginTop: 2, // Beri jarak dari teks di atasnya
-            }}
-        >
-            <img src={icon8} style={{ height: 30, width: 30 }} alt="icon" />
-            <Typography className="headline-blok-three-in" sx={{ textTransform: "none" }}>
-            <FormattedMessage id="button-selengkapnya" />
-            </Typography>
+        <Button onClick={() => document.getElementById("topik")?.scrollIntoView({ behavior: "smooth" })}>
+          <img src={icon8} style={{ width: 24, height: 24, marginRight: 8 }} />
+          <FormattedMessage id="button-selengkapnya" />
         </Button>
-        </Box>
-        <Box
+      </Box>
+    </Grid>
+
+    {/* ==== CARD 2 ==== */}
+    <Grid item xs={12} sm={6} md={3}>
+      <Box
         sx={{
-            width: 290,
-            height: 290,
-            backgroundColor: "white",
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-            borderRadius: 10,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center", // Agar teks juga sejajar tengah
-            padding: 2,
+          width: { xs: "100%", md: "90%" },
+          height: 240,
+          backgroundColor: "white",
+          boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
+          borderRadius: 3,
+          p: 2,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center"
         }}
-        >
-        <img src={icon13} style={{ width: 50, height: 50, marginBottom: 10 }} alt="icon" />
+      >
+        <img src={icon13} style={{ width: 40, height: 40, marginBottom: 10 }} />
 
-        <Typography className="headline-blok-four" sx={{ fontSize: 22, fontWeight: "bold" }}>
-        Mailchimp
+        <Typography sx={{ fontSize: 18, fontWeight: "bold" }}>
+          Mailchimp
         </Typography>
 
-        <Typography className="deskripsi-blok-four" sx={{ marginBottom: 2, textAlign: 'center' }}>
-        <FormattedMessage id="deskripsi-6" />
+        <Typography sx={{ mb: 2, fontSize: 14 }}>
+          <FormattedMessage id="deskripsi-6" />
         </Typography>
 
-        <Button
-            onClick={() => {
-                const section = document.getElementById("topik");
-                if (section) {
-                    section.scrollIntoView({ behavior: "smooth" });
-                }
-            }}
-            sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center", // Pastikan sejajar vertikal
-            gap: 1,
-            marginTop: 2, // Beri jarak dari teks di atasnya
-            }}
-        >
-            <img src={icon8} style={{ height: 30, width: 30 }} alt="icon" />
-            <Typography className="headline-blok-three-in" sx={{ textTransform: "none" }}>
-            <FormattedMessage id="button-selengkapnya" />
-            </Typography>
+        <Button onClick={() => document.getElementById("topik")?.scrollIntoView({ behavior: "smooth" })}>
+          <img src={icon8} style={{ width: 24, height: 24, marginRight: 8 }} />
+          <FormattedMessage id="button-selengkapnya" />
         </Button>
-        </Box>
-        <Box
+      </Box>
+    </Grid>
+
+    {/* ==== CARD 3 ==== */}
+    <Grid item xs={12} sm={6} md={3}>
+      <Box
         sx={{
-            width: 290,
-            height: 290,
-            backgroundColor: "white",
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-            borderRadius: 10,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center", // Agar teks juga sejajar tengah
-            padding: 2,
+          width: { xs: "100%", md: "90%" },
+          height: 240,
+          backgroundColor: "white",
+          boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
+          borderRadius: 3,
+          p: 2,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center"
         }}
-        >
-        <img src={icon14} style={{ width: 50, height: 50, marginBottom: 10 }} alt="icon" />
+      >
+        <img src={icon14} style={{ width: 40, height: 40, marginBottom: 10 }} />
 
-        <Typography className="headline-blok-four" sx={{ fontSize: 22, fontWeight: "bold" }}>
-        Slack
+        <Typography sx={{ fontSize: 18, fontWeight: "bold" }}>
+          Slack
         </Typography>
 
-        <Typography className="deskripsi-blok-four" sx={{ marginBottom: 2, textAlign: 'center' }}>
-        <FormattedMessage id="deskripsi-7" />
+        <Typography sx={{ mb: 2, fontSize: 14 }}>
+          <FormattedMessage id="deskripsi-7" />
         </Typography>
 
-        <Button
-            onClick={() => {
-                const section = document.getElementById("topik");
-                if (section) {
-                    section.scrollIntoView({ behavior: "smooth" });
-                }
-            }}
-            sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center", // Pastikan sejajar vertikal
-            gap: 1,
-            marginTop: 2, // Beri jarak dari teks di atasnya
-            }}
-        >
-            <img src={icon8} style={{ height: 30, width: 30 }} alt="icon" />
-            <Typography className="headline-blok-three-in" sx={{ textTransform: "none" }}>
-            <FormattedMessage id="button-selengkapnya" />
-            </Typography>
+        <Button onClick={() => document.getElementById("topik")?.scrollIntoView({ behavior: "smooth" })}>
+          <img src={icon8} style={{ width: 24, height: 24, marginRight: 8 }} />
+          <FormattedMessage id="button-selengkapnya" />
         </Button>
-        </Box>
-        <Box
+      </Box>
+    </Grid>
+
+    {/* ==== CARD 4 – TURUN KE BAWAH ==== */}
+    <Grid
+      item
+      xs={12}
+      md={3}
+      sx={{ display: "flex", justifyContent: "center", mx: "auto" }}
+    >
+      <Box
         sx={{
-            width: 290,
-            height: 290,
-            backgroundColor: "white",
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-            borderRadius: 10,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center", // Agar teks juga sejajar tengah
-            padding: 2,
+          width: { xs: "100%", md: "90%" },
+          height: 240,
+          backgroundColor: "white",
+          boxShadow: "0px 4px 10px rgba(0,0,0,0.1)",
+          borderRadius: 3,
+          p: 2,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center"
         }}
-        >
-        <img src={icon15} style={{ width: 50, height: 50, marginBottom: 10 }} alt="icon" />
+      >
+        <img src={icon15} style={{ width: 40, height: 40, marginBottom: 10 }} />
 
-        <Typography className="headline-blok-four" sx={{ fontSize: 22, fontWeight: "bold" }}>
-        Messenger
+        <Typography sx={{ fontSize: 18, fontWeight: "bold" }}>
+          Messenger
         </Typography>
 
-        <Typography className="deskripsi-blok-four" sx={{ marginBottom: 2, textAlign: 'center' }}>
-        <FormattedMessage id="deskripsi-8" />
+        <Typography sx={{ mb: 2, fontSize: 14 }}>
+          <FormattedMessage id="deskripsi-8" />
         </Typography>
 
-        <Button
-            onClick={() => {
-                const section = document.getElementById("topik");
-                if (section) {
-                    section.scrollIntoView({ behavior: "smooth" });
-                }
-            }}
-            sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center", // Pastikan sejajar vertikal
-            gap: 1,
-            marginTop: 2, // Beri jarak dari teks di atasnya
-            }}
-        >
-            <img src={icon8} style={{ height: 30, width: 30 }} alt="icon" />
-            <Typography className="headline-blok-three-in" sx={{ textTransform: "none" }}>
-            <FormattedMessage id="button-selengkapnya" />
-            </Typography>
+        <Button onClick={() => document.getElementById("topik")?.scrollIntoView({ behavior: "smooth" })}>
+          <img src={icon8} style={{ width: 24, height: 24, marginRight: 8 }} />
+          <FormattedMessage id="button-selengkapnya" />
         </Button>
-        </Box>
-  </Box>
+      </Box>
+    </Grid>
+
+  </Grid>
+</Box>
+
 </Box>
 
 
@@ -2104,185 +2300,110 @@ export function Home({ setLocale }) {
           </Box>
         </Typography>
 
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 6 }}>
-          {features.map((feature, index) => (
-            <FeatureBox key={index} {...feature} />
-          ))}
-        </Box>
-      </Box>
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                {features.map((feature, index) => (
+                  <FeatureBox key={index} {...feature} />
+                ))}
+              </Box>
+            </Box>
 
-      {/* Kanan - Gambar */}
-      <Box
-        sx={{
-            flex: 1,
-            display: "flex",
-            justifyContent: "flex-end", // Gambar ke paling kanan
-            alignItems: "center",
-            position: "relative", // Dibutuhkan agar lingkaran tetap di dalam Box
-        }}
-        >
-        {/* Lingkaran di belakang gambar */}
-        <Box
-        sx={{
-            position: "absolute",
-            width: !isMobile ? 750 : 350,
-            height: !isMobile ? 750 : 350,
-            borderRadius: "50%",
-            background: "linear-gradient(to bottom right, rgb(98, 150, 130), #6EC1E4, rgb(172, 250, 182))",
-            zIndex: -1,
-            right: !isMobile ? 0 : "unset", // Hanya di kanan jika bukan mobile
-            left: isMobile ? "50%" : "unset", // Di tengah saat mobile
-            transform: isMobile ? "translateX(-50%)" : "none", // Geser agar benar-benar di tengah
-            top: isMobile ? 60 : 50,
-        }}
-        />
-
-        {/* Gambar */}
-        <Box
+            {/* Kanan - Gambar */}
+            <Box
             sx={{
-                position: "absolute",
-                top: isMobile ? 200 : 500,
-                left: isMobile ? 140 : 390,
-                width: !isMobile ? 140 : 110,
-                height: !isMobile ? 40 : 20,
-                background: "linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(173, 181, 230, 0.6))",
-                backdropFilter: "blur(10px)", // Memberikan efek blur
-                WebkitBackdropFilter: "blur(10px)", // Untuk browser berbasis WebKit
-                borderRadius: 3,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "right",
-                color: "white",
-                fontWeight: 600,
-                fontSize: 16,
-                padding: "10px 15px",
-                opacity: 0,
-                animation: "fadeIn2 1s ease-in-out 2s forwards",
-                border: "1px solid rgba(255, 255, 255, 0.3)", // Membuatnya lebih menonjol dengan border yang lebih tipis
-                zIndex: 3
+              flex: 1,
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "center",
+              position: "relative",
             }}
-            >
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                <Typography
-                className="point-linda-support"
-                sx={{
-                    fontSize: isMobile ? 12 : 16,
-                    fontWeight: 600,
-                }}
-                >
-                 Layanan Handal
-                </Typography>
-            </Box>
-            </Box>
-        <img
+          >
+          <img
             src={icon16}
             alt="Illustration"
             style={{
-            maxWidth: "90%", // Pastikan tidak terlalu besar
-            height: "auto",
-            borderRadius: 16,
-            position: isMobile ? 'relative' : 0,
-            top: isMobile ?  20 : 0
+              maxWidth: isMobile ? "80%" : "100%",
+              height: "auto",
+              borderRadius: 16,
+              position: "relative",     // <--- tambah ini
+              top: isMobile ? 20 : 100,  // sekarang bisa turun
             }}
-        />
+          />
 
-          <Box
-            sx={{
-                position: "absolute",
-                top: isMobile ? 95 : 170,
-                left: isMobile ? 10 : 60,
-                width: !isMobile ? 220 : 110,
-                height: !isMobile ? 50 : 30,
-                background: "linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(173, 181, 230, 0.6))",
-                backdropFilter: "blur(10px)", // Memberikan efek blur
-                WebkitBackdropFilter: "blur(10px)", // Untuk browser berbasis WebKit
-                borderRadius: 3,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "white",
-                fontWeight: 600,
-                fontSize: 16,
-                padding: "10px 15px",
-                opacity: 0,
-                animation: "fadeIn 1s ease-in-out 2s forwards",
-                border: "1px solid rgba(255, 255, 255, 0.3)", // Membuatnya lebih menonjol dengan border yang lebih tipis
-            }}
-            >
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                <Typography
-                className="point-linda-support"
-                sx={{
-                    fontSize: isMobile ? 12 : 16,
-                    fontWeight: 600,
-                }}
-                >
-                Dukungan Cepat
-                </Typography>
-            </Box>
-            </Box>
         </Box>
+
     </Box>
 
-    <Box sx={{
-    width: isMobile ? '77%' : "95%",
-    height: !isMobile ? 400 : "auto",
-    position: 'relative',
-    top: isMobile ? '1780px' : 0,
+<Box
+  sx={{
+    width: "100%",
     backgroundColor: "#1f2123",
-    bottom: !isMobile ? -100 : 0,
     color: "white",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "40px"
-}}>
-    <Grid container spacing={5} maxWidth="lg">
-        {/* Kolom 1 */}
-        <Grid item xs={12} md={3}>
-            <Typography className="title-footer" variant="h6" fontWeight="bold" mb={2}>Product</Typography>
-            <Typography className="menu-footer">Pricing</Typography>
-            <Typography className="menu-footer">Benefits</Typography>
-            <Typography className="menu-footer">Features</Typography>
-            <Typography className="menu-footer">Product Demo</Typography>
-            <Typography className="menu-footer">Visual Builder</Typography>
-            <Typography className="menu-footer">Dynamic</Typography>
-        </Grid>
+    py: { xs: 6, md: 10 },
+    mt: { xs: 200, md: 40 },   // Mobile 20, Desktop 40
+  }}
+>
+  <Container maxWidth="xl">
+    <Grid 
+      container 
+      spacing={5}
+    >
 
-        {/* Kolom 2 */}
-        <Grid item xs={12} md={3}>
-            <Typography className="title-footer" variant="h6" fontWeight="bold" mb={2}>Solutions</Typography>
-            <Typography className="menu-footer">Marketing</Typography>
-            <Typography className="menu-footer">Customer Support</Typography>
-            <Typography className="menu-footer">Sales</Typography>
-            <Typography className="menu-footer">Education</Typography>
-            <Typography className="menu-footer">Course</Typography>
-            <Typography className="menu-footer">Career</Typography>
-        </Grid>
+      {/* Kolom 1 */}
+      <Grid item xs={12} md={3}>
+        <Typography variant="h6" fontWeight="bold" mb={2}>
+          Product
+        </Typography>
+        <Typography className="menu-footer">Pricing</Typography>
+        <Typography className="menu-footer">Benefits</Typography>
+        <Typography className="menu-footer">Features</Typography>
+        <Typography className="menu-footer">Product Demo</Typography>
+        <Typography className="menu-footer">Visual Builder</Typography>
+        <Typography className="menu-footer">Dynamic</Typography>
+      </Grid>
 
-        {/* Kolom 3 */}
-        <Grid item xs={12} md={3}>
-            <Typography className="title-footer" variant="h6" fontWeight="bold" mb={2}>Integrations</Typography>
-            <Typography className="menu-footer">Chat Widget</Typography>
-            <Typography className="menu-footer">LiveChat</Typography>
-            <Typography className="menu-footer">HelpDesk</Typography>
-            <Typography className="menu-footer">Facebook Messenger</Typography>
-            <Typography className="menu-footer">Shopify</Typography>
-            <Typography className="menu-footer">Slack</Typography>
-        </Grid>
+      {/* Kolom 2 */}
+      <Grid item xs={12} md={3}>
+        <Typography variant="h6" fontWeight="bold" mb={2}>
+          Solutions
+        </Typography>
+        <Typography className="menu-footer">Marketing</Typography>
+        <Typography className="menu-footer">Customer Support</Typography>
+        <Typography className="menu-footer">Sales</Typography>
+        <Typography className="menu-footer">Education</Typography>
+        <Typography className="menu-footer">Course</Typography>
+        <Typography className="menu-footer">Career</Typography>
+      </Grid>
 
-        {/* Kolom 4 */}
-        <Grid item xs={12} md={3}>
-            <Typography className="title-footer" variant="h6" fontWeight="bold" mb={2}>Resources</Typography>
-            <Typography className="menu-footer">Help Center</Typography>
-            <Typography className="menu-footer">API & Developers</Typography>
-            <Typography className="menu-footer">ChatBot Academy</Typography>
-            <Typography className="menu-footer">Blog</Typography>
-            <Typography className="menu-footer">Chatbot Best Practices</Typography>
-            <Typography className="menu-footer">System Status</Typography>
-        </Grid>
+      {/* Kolom 3 */}
+      <Grid item xs={12} md={3}>
+        <Typography variant="h6" fontWeight="bold" mb={2}>
+          Integrations
+        </Typography>
+        <Typography className="menu-footer">Chat Widget</Typography>
+        <Typography className="menu-footer">LiveChat</Typography>
+        <Typography className="menu-footer">HelpDesk</Typography>
+        <Typography className="menu-footer">Facebook Messenger</Typography>
+        <Typography className="menu-footer">Shopify</Typography>
+        <Typography className="menu-footer">Slack</Typography>
+      </Grid>
+
+      {/* Kolom 4 */}
+      <Grid item xs={12} md={3}>
+        <Typography variant="h6" fontWeight="bold" mb={2}>
+          Resources
+        </Typography>
+        <Typography className="menu-footer">Help Center</Typography>
+        <Typography className="menu-footer">API & Developers</Typography>
+        <Typography className="menu-footer">ChatBot Academy</Typography>
+        <Typography className="menu-footer">Blog</Typography>
+        <Typography className="menu-footer">Chatbot Best Practices</Typography>
+        <Typography className="menu-footer">System Status</Typography>
+      </Grid>
+
     </Grid>
+  </Container>
 </Box>
+
      </Box>
 
 
